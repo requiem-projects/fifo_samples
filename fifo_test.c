@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
         char buf[200];
 
         char fifo_name[] = "/var/log/proftpd_log_all.fifo";
-        fifo= open(fifo_name, O_RDONLY);
+        fifo= open(fifo_name, O_RDONLY|O_NONBLOCK);
 
         // receive messages
         while (1)
